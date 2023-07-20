@@ -2,11 +2,19 @@ import React from 'react';
 import {
   BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
+import BookList from './components/BookList';
+import BookForm from './components/BookForm';
 
 const App = () => {
-  const Home = () => <h1>Welcome to the Home Page</h1>;
+  const Home = () => (
+    <>
+      <BookForm />
+      <BookList />
+    </>
+  );
 
-  const Categories = () => <h1>Welcome to the Categories Page</h1>;
+  const Categories = () => <h1 className="mt-5">Welcome to the Categories Page</h1>;
+
   return (
     <Router>
       <nav className="bg-gray-800 py-4">
@@ -21,7 +29,7 @@ const App = () => {
               </Link>
             </li>
             <li>
-              <Link to="/calculator" className="text-white hover:text-teal-200">
+              <Link to="/catagories" className="text-white hover:text-teal-200">
                 Categories
               </Link>
             </li>
