@@ -11,20 +11,23 @@ const Book = ({ title, author, onDelete }) => {
 
   return (
     !isDeleted && (
-    <div className="bg-white shadow-md rounded-md p-4 mb-4">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p className="text-gray-600">
-        Author:
-        {author}
-      </p>
-      <button
-        type="button"
-        className="bg-red-500 text-white px-4 py-2 mt-2 rounded-md"
-        onClick={handleDelete}
-      >
-        Delete
-      </button>
-    </div>
+      <div className="flex justify-center items-center h-screen">
+        <div className="bg-gray-900 shadow-md rounded-md p-4 mb-4 text-center" style={{ width: '33vw', height: '35vh' }}>
+          <h2 className="text-xl font-semibold mb-2 text-white">{title}</h2>
+          <p className="text-white pt-5">
+            Author:
+            {' '}
+            {author}
+          </p>
+          <button
+            type="button"
+            className="bg-red-500 text-white px-4 py-2 mt-2 rounded-md mt-10"
+            onClick={handleDelete}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     )
   );
 };
