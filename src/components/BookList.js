@@ -133,6 +133,32 @@ const BookList = () => {
         </div>
       )}
 
+      <div className="card border border-gray-300 rounded-lg shadow-md p-4 w-11/12 flex justify-between mx-auto">
+        {/* Left Section */}
+        <div>
+          <h2 className="text-xl font-semibold">Action</h2>
+          <h3 className="text-lg text-gray-600">The Hunger Games</h3>
+          <p className="text-gray-600">Suzanne Collins</p>
+          <p className="text-gray-600">Comments</p>
+          <button type="button" className="bg-red-500 text-white px-4 py-2 rounded mt-2">Remove</button>
+          <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded mt-2 ml-2">Edit</button>
+        </div>
+
+        {/* Middle Section */}
+        <div className="flex items-center">
+          <div className="w-3/4 h-4 bg-gray-200 rounded">
+            <div className="w-64 h-full bg-blue-500 rounded" />
+          </div>
+          <p className="ml-2 text-gray-600">64% Completed</p>
+        </div>
+
+        {/* Right Section */}
+        <div>
+          <h3 className="text-lg text-gray-600">CURRENT CHAPTER</h3>
+          <p className="text-gray-600">Chapter 17</p>
+          <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded mt-2">UPDATE PROGRESS</button>
+        </div>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {booksArray?.map((book) => (
           <div key={book.item_id} className="bg-gray-900 p-4 rounded-lg shadow-md">
