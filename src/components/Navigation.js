@@ -71,7 +71,7 @@ const Navigation = () => (
 
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/catagories" element={<Categories />} />
+      <Route exact path="/categories" element={<Categories />} />
     </Routes>
   </Router>
 );
