@@ -99,14 +99,15 @@ const BookList = () => {
           <div key={book.item_id} className="card border bg-white border-gray-300 rounded-lg shadow-md p-4 w-11/12 flex justify-between mx-auto mt-6">
             {/* Left Section */}
             <div className="ml-4">
-              <h2 className="text-lg text-gray-400">{book.category}</h2>
-              <h3 className="text-xl text-black-600 font-bold">{book.title}</h3>
-              <p className="text-blue-400">{book.author}</p>
+              <h2 className="text-lg text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>{book.category}</h2>
+              <h3 className="text-xl text-black-600 font-bold" style={{ fontFamily: 'Montserrat, sans-serif' }}>{book.title}</h3>
+              <p className="text-blue-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>{book.author}</p>
               <div className="flex items-center">
-                <p className="text-blue-400">Comments</p>
+                <p className="text-blue-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>Comments</p>
                 <span className="text-gray-300 ml-2">|</span>
                 <span
                   className="text-blue-400 px-4 py-2 cursor-pointer"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
                   onClick={() => handleRemoveBook(book.item_id)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
@@ -120,7 +121,7 @@ const BookList = () => {
                 </span>
                 {' '}
                 <span className="text-gray-300 ml-2">|</span>
-                <span className="text-blue-400 px-4 py-2">Edit</span>
+                <span className="text-blue-400 px-4 py-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Edit</span>
               </div>
             </div>
 
@@ -130,8 +131,8 @@ const BookList = () => {
                 <div className="inner" />
                 <div className="outer" />
                 <div className="numb">
-                  <div>90%</div>
-                  <div className="numb-title">Completed</div>
+                  <div className="text-progress" style={{ fontFamily: 'Montserrat, sans-serif' }}>90%</div>
+                  <div className="numb-title text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>Completed</div>
                 </div>
                 <div className="circle">
                   <div className="zero-dot">
@@ -155,33 +156,33 @@ const BookList = () => {
 
             {/* Right Section */}
             <div>
-              <h3 className="text-m text-gray-400">CURRENT CHAPTER</h3>
-              <p className="text-black-600 text-lg">Chapter 17</p>
-              <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded mt-4">UPDATE PROGRESS</button>
+              <h3 className="text-m text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>CURRENT CHAPTER</h3>
+              <p className="text-black-600 text-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>Chapter 17</p>
+              <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded mt-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>UPDATE PROGRESS</button>
             </div>
           </div>
         ))}
       </div>
       <div className="bg-white rounded-lg  justify-between mx-auto mt-6 w-11/12 mb-6">
-        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-4 mt-8">ADD NEW BOOK</h2>
+        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-4 mt-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>ADD NEW BOOK</h2>
         <input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="p-2 mb-2 rounded-lg border ml-4 w-full sm:w-80"
+          className="p-2 mb-2  border ml-6 w-full sm:w-80"
         />
         <input
           type="text"
           placeholder="Author"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="p-2 mb-2 rounded-lg border mb-8 ml-4 w-full sm:w-40"
+          className="p-2 mb-2 border mb-8 w-full sm:w-60"
         />
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="p-2 mb-2 border w-full sm:w-60 rounded-lg appearance-none ml-4"
+          className="p-2 mb-2 border w-full sm:w-80 rounded-lg appearance-none ml-4"
         >
           <option value="">Select Category</option>
           <option value="Action">Action</option>
@@ -205,17 +206,9 @@ const BookList = () => {
         <button
           type="button"
           onClick={handleAddBook}
-          className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mt-4 sm:mt-0 ml-6"
+          className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mt-4 sm:mt-0 ml-6 w-full sm:w-80 "
         >
           Add Book
-        </button>
-
-        <button
-          type="button"
-          onClick={closeAddDialog}
-          className="bg-red-600 hover:bg-red-400 text-white font-bold py-2 px-4 rounded mt-4 sm:mt-0 ml-6"
-        >
-          Clear
         </button>
       </div>
     </div>

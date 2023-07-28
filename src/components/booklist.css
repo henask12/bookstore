@@ -35,13 +35,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  font-size: 1.3vw;
-  font-weight: 500;
   color: #111;
 }
 
+.text-progress {
+  font-size: 1.6vw;
+  font-weight: 500;
+}
+
 .numb-title {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
+  font-weight: 400;
 }
 
 @media (min-width: 1050px) {
