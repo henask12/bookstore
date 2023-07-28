@@ -176,12 +176,12 @@ const BookList = () => {
           placeholder="Author"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="p-2 mb-2 rounded-lg border mb-8 ml-4 w-full sm:w-80"
+          className="p-2 mb-2 rounded-lg border mb-8 ml-4 w-full sm:w-40"
         />
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="p-2 mb-2 border w-full sm:w-80 rounded-lg appearance-none ml-4"
+          className="p-2 mb-2 border w-full sm:w-60 rounded-lg appearance-none ml-4"
         >
           <option value="">Select Category</option>
           <option value="Action">Action</option>
