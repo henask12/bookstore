@@ -163,14 +163,15 @@ const BookList = () => {
           </div>
         ))}
       </div>
-      <div className="bg-white rounded-lg  justify-between mx-auto mt-6 w-11/12 mb-6">
-        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-4 mt-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>ADD NEW BOOK</h2>
+      <div className="bg-gray-200 rounded-lg  justify-between mx-auto mt-6 w-11/12 mb-6">
+        <div className="border-t border-gray-300 my-4 mt-8" />
+        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-8 mt-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>ADD NEW BOOK</h2>
         <input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="p-2 mb-2  border ml-6 w-full sm:w-80"
+          className="p-2 mb-2  border w-full sm:w-80"
         />
         <input
           type="text"
@@ -182,7 +183,7 @@ const BookList = () => {
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="p-2 mb-2 border w-full sm:w-80 rounded-lg appearance-none ml-4"
+          className="p-2 mb-2 border w-full sm:w-80 rounded-lg appearance-none ml-6"
         >
           <option value="">Select Category</option>
           <option value="Action">Action</option>
@@ -206,7 +207,7 @@ const BookList = () => {
         <button
           type="button"
           onClick={handleAddBook}
-          className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mt-4 sm:mt-0 ml-6 w-full sm:w-80 "
+          className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mt-4 sm:mt-0  w-full sm:w-80 "
         >
           Add Book
         </button>
