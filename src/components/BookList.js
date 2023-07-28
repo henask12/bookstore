@@ -15,12 +15,12 @@ const BookList = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  // const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
   const closeAddDialog = () => {
     setTitle('');
-    setAuthor('');
+    // setAuthor('');
     setCategory('');
   };
 
@@ -39,7 +39,7 @@ const BookList = () => {
     const newBook = {
       item_id: uuidv4(), // Generating a unique ID for the new book
       title,
-      author,
+      author: 'Henok',
       category,
     };
 
@@ -99,15 +99,22 @@ const BookList = () => {
           <div key={book.item_id} className="card border bg-white border-gray-300 rounded-lg shadow-md p-4 w-11/12 flex justify-between mx-auto mt-6">
             {/* Left Section */}
             <div className="ml-4">
-              <h2 className="text-lg text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>{book.category}</h2>
-              <h3 className="text-xl text-black-600 font-bold" style={{ fontFamily: 'Montserrat, sans-serif' }}>{book.title}</h3>
-              <p className="text-blue-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>{book.author}</p>
+              <h2
+                className="text-gray-500"
+                style={{
+                  fontFamily: 'Montserrat', fontSize: '0.995rem', fontWeight: 'bold',
+                }}
+              >
+                {book.category}
+              </h2>
+              <h3 className="text-xl text-black-600 font-bold" style={{ fontFamily: 'Montserrat' }}>{book.title}</h3>
+              <p className="text-blue-400" style={{ fontFamily: 'Montserrat' }}>{book.author}</p>
               <div className="flex items-center">
-                <p className="text-blue-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>Comments</p>
+                <p className="text-blue-400" style={{ fontFamily: 'Montserrat' }}>Comments</p>
                 <span className="text-gray-300 ml-2">|</span>
                 <span
                   className="text-blue-400 px-4 py-2 cursor-pointer"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  style={{ fontFamily: 'Montserrat' }}
                   onClick={() => handleRemoveBook(book.item_id)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
@@ -121,7 +128,7 @@ const BookList = () => {
                 </span>
                 {' '}
                 <span className="text-gray-300 ml-2">|</span>
-                <span className="text-blue-400 px-4 py-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Edit</span>
+                <span className="text-blue-400 px-4 py-2" style={{ fontFamily: 'Montserrat' }}>Edit</span>
               </div>
             </div>
 
@@ -131,8 +138,8 @@ const BookList = () => {
                 <div className="inner" />
                 <div className="outer" />
                 <div className="numb">
-                  <div className="text-progress" style={{ fontFamily: 'Montserrat, sans-serif' }}>90%</div>
-                  <div className="numb-title text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>Completed</div>
+                  <div className="text-progress" style={{ fontFamily: 'Montserrat' }}>90%</div>
+                  <div className="numb-title text-gray-400" style={{ fontFamily: 'Montserrat' }}>Completed</div>
                 </div>
                 <div className="circle">
                   <div className="zero-dot">
@@ -156,34 +163,27 @@ const BookList = () => {
 
             {/* Right Section */}
             <div>
-              <h3 className="text-m text-gray-400" style={{ fontFamily: 'Montserrat, sans-serif' }}>CURRENT CHAPTER</h3>
-              <p className="text-black-600 text-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>Chapter 17</p>
-              <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded mt-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>UPDATE PROGRESS</button>
+              <h3 className="text-m text-gray-400" style={{ fontFamily: 'Montserrat !important' }}>CURRENT CHAPTER</h3>
+              <p className="text-black-600 text-lg" style={{ fontFamily: 'Montserrat' }}>Chapter 17</p>
+              <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded mt-4" style={{ fontFamily: 'Montserrat' }}>UPDATE PROGRESS</button>
             </div>
           </div>
         ))}
       </div>
       <div className="bg-gray-200 rounded-lg  justify-between mx-auto mt-6 w-11/12 mb-6">
         <div className="border-t border-gray-300 my-4 mt-8" />
-        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-8 mt-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>ADD NEW BOOK</h2>
+        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-8 mt-8" style={{ fontFamily: 'Montserrat !important' }}>ADD NEW BOOK</h2>
         <input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="p-2 mb-2  border w-full sm:w-80"
-        />
-        <input
-          type="text"
-          placeholder="Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          className="p-2 mb-2 border mb-8 w-full sm:w-60"
+          className="p-2 mb-2  border w-full sm:w-2/5"
         />
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="p-2 mb-2 border w-full sm:w-80 rounded-lg appearance-none ml-6"
+          className="p-2 mb-2 border w-full sm:w-4/12 rounded-lg appearance-none ml-6"
         >
           <option value="">Select Category</option>
           <option value="Action">Action</option>
@@ -207,7 +207,7 @@ const BookList = () => {
         <button
           type="button"
           onClick={handleAddBook}
-          className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mt-4 sm:mt-0  w-full sm:w-80 "
+          className="bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 ml-4 px-4 rounded mt-4 sm:mt-0  w-full sm:w-1/6"
         >
           Add Book
         </button>
