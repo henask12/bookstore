@@ -92,11 +92,11 @@ const BookList = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 bg-gray-200">
 
       <div className="">
         {booksArray?.map((book) => (
-          <div key={book.item_id} className="card border border-gray-300 rounded-lg shadow-md p-4 w-11/12 flex justify-between mx-auto mt-6">
+          <div key={book.item_id} className="card border bg-white border-gray-300 rounded-lg shadow-md p-4 w-11/12 flex justify-between mx-auto mt-6">
             {/* Left Section */}
             <div className="ml-4">
               <h2 className="text-lg text-gray-400">{book.category}</h2>
@@ -162,8 +162,8 @@ const BookList = () => {
           </div>
         ))}
       </div>
-      <div className="bg-white rounded-lg p-4 ml-8">
-        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-4">ADD NEW BOOK</h2>
+      <div className="bg-white rounded-lg  justify-between mx-auto mt-6 w-11/12 mb-6">
+        <h2 className="text-xl text-gray-400 font-bold mb-4 ml-4 mt-8">ADD NEW BOOK</h2>
         <input
           type="text"
           placeholder="Title"
@@ -176,7 +176,7 @@ const BookList = () => {
           placeholder="Author"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="p-2 mb-2 rounded-lg border ml-4 w-full sm:w-80"
+          className="p-2 mb-2 rounded-lg border mb-8 ml-4 w-full sm:w-80"
         />
         <select
           value={category}
